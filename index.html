@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Arena</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h2> QUIZ ARENA</h2>
+        <button id="soundBtn">🔊 Sound on</button>
+    </header>
+
+    <!-- HOME SCREEN -->
+
+    <section id="home" class="panel">
+
+        <div class="welcome">
+            <h1>🧠 Ready to test yourself?</h1>
+            <p>Choose your challenge and test your knowledge!</p>
+        </div>
+
+        <h3>Choose Category</h3>
+
+        <div class="options" id="categories">
+            <button class="active" data-cat="All">🌎 All</button>
+            <button data-cat="Science">🔬 Science</button>
+            <button data-cat="Technology">💻 Technology</button>
+            <button data-cat="History">📜 History</button>
+            <button data-cat="Geography">🌍 Geography</button>
+            <button data-cat="Mathematics">➗ Mathematics</button>
+        </div>
+
+        <h3>Difficulty Level</h3>
+
+        <div class="options" id="difficulties">
+            <button class="active" data-diff="All">All</button>
+            <button data-diff="Easy">Easy</button>
+            <button data-diff="Medium">Medium</button>
+            <button data-diff="Hard">Hard</button>
+        </div>
+
+        <div class="stats home-stats">
+
+            <div>
+                <p>Questions</p>
+                <h2 id="questionCount">15</h2>
+            </div>
+
+            <div>
+                <p>Time per question</p>
+                <h2>20 sec</h2>
+            </div>
+
+        </div>
+
+        <label class="shuffle">
+            <input type="checkbox" id="shuffle" checked>
+            Shuffle questions
+        </label>
+
+        <button class="start-btn" id="startBtn">
+            Start Quiz →
+        </button>
+
+    </section>
+
+    <!-- QUIZ SCREEN -->
+
+    <section id="quiz" class="panel hidden">
+
+        <div class="quiz-top">
+            <span id="questionNumber">Question 1</span>
+            <span id="difficulty">Easy</span>
+        </div>
+
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
+
+        <div class="timer">
+            <span id="categoryName">Science</span>
+            <span id="timer">⏱ 20s</span>
+        </div>
+
+        <div class="timer-track">
+            <div id="timerBar"></div>
+        </div>
+
+        <h2 id="question">Question goes here</h2>
+
+        <div id="answers" class="answers"></div>
+
+        <div id="feedback" class="feedback hidden"></div>
+
+        <div class="quiz-bottom">
+            <span id="liveScore">Score: 0</span>
+            <button id="nextBtn" disabled>
+                Next Question →
+            </button>
+        </div>
+
+    </section>
+
+    <!-- RESULT SCREEN -->
+
+    <section id="result" class="panel hidden">
+
+        <div class="result-header">
+
+            <h1 id="trophy">🏆</h1>
+
+            <h2 id="resultTitle">Quiz Completed!</h2>
+
+            <p id="resultMessage"></p>
+
+            <h1 id="percentage">0%</h1>
+
+            <p>YOUR FINAL SCORE</p>
+
+        </div>
+
+        <div class="stats">
+
+            <div>
+                <h2 id="correctCount">0</h2>
+                <p>Correct</p>
+            </div>
+
+            <div>
+                <h2 id="wrongCount">0</h2>
+                <p>Incorrect</p>
+            </div>
+
+            <div>
+                <h2 id="timeoutCount">0</h2>
+                <p>Timed out</p>
+            </div>
+
+        </div>
+
+        <h3>Answer Review</h3>
+
+        <div id="review"></div>
+
+        <button class="start-btn" id="retryBtn">
+            ↻ Play Again
+        </button>
+
+        <button class="home-btn" id="homeBtn">
+            Back to Home
+        </button>
+
+    </section>
+
+    <footer>
+        Quiz Arena · Learn something new every day
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
